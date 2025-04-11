@@ -51,10 +51,17 @@ spec:
     spec:
       containers:
         - name: petclinic
-          image: hetulmehta/spring-petclinic-app:latest  
-          imagePullPolicy: Always                                     
+          image: hetulmehta/spring-petclinic-app:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          env:
+            - name: SPRING_APPLICATION_JSON
+              value: |
+                {
+                  "management.endpoint.health.probes.add-additional-paths": true
+                }
+
 ---
 apiVersion: v1
 kind: Service
