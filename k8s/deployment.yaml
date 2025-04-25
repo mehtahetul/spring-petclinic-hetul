@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: petclinic
-          image: hetulmehta/spring-petclinic-app:latest
-          imagePullPolicy: Always
+          image: spring-petclinic-app
+          imagePullPolicy: Never
           ports:
             - containerPort: 8080
 ---
